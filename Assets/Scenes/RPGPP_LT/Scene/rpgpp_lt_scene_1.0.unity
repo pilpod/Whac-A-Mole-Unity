@@ -12150,6 +12150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
+  maxTimeOut: 2
 --- !u!1001 &1756932509
 PrefabInstance:
   m_ObjectHideFlags: 0
