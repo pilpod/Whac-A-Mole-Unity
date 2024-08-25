@@ -46,6 +46,11 @@ public class MoleController : MonoBehaviour
         }
     }
 
+    private void OnMouseDown()
+    {
+        Debug.Log("------ Mole Cashed");
+    }
+
     private void MoveUp()
     {
         if (transform.localPosition.y < 2.25f && !isOut)
