@@ -12151,7 +12151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 2
+  maxTimeOut: 1
 --- !u!1001 &1756932509
 PrefabInstance:
   m_ObjectHideFlags: 0

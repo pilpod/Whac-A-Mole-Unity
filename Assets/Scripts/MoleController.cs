@@ -8,7 +8,7 @@ public class MoleController : MonoBehaviour
     private int velocity;
     private float starterTime;
     private bool isOut;
-    public int maxTimeOut = 2;
+    public int maxTimeOut = 1;
     private float timeSpent;
 
     // Start is called before the first frame update
@@ -22,7 +22,10 @@ public class MoleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveUp();
+        if (isActive) { 
+            MoveUp();
+            MoveDown();
+        }
 
         if (transform.localPosition.y >= 2.25f && !isOut)
         {
@@ -35,11 +38,11 @@ public class MoleController : MonoBehaviour
             timeSpent = Time.time - starterTime;
         }
 
-        MoveDown();
 
         if (transform.localPosition.y <= 0)
         {
             isOut = false;
+            isActive = false;
         }
     }
 
