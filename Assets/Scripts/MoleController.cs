@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,19 +11,21 @@ public class MoleController : MonoBehaviour
     private bool isOut;
     public int maxTimeOut = 1;
     private float timeSpent;
+    public ParticleSystem part;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.localPosition = new Vector3(10.45f, 0, -23);
-        velocity = 3;        
+        velocity = 5;
         isOut = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActive) { 
+        if (isActive)
+        {
             MoveUp();
             MoveDown();
         }
@@ -38,17 +41,19 @@ public class MoleController : MonoBehaviour
             timeSpent = Time.time - starterTime;
         }
 
-
-        if (transform.localPosition.y <= 0)
-        {
-            isOut = false;
-            isActive = false;
-        }
+        Disable();
+        
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("------ Mole Cashed");
+        if (isOut)
+        {
+            part.Play();
+            transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
+            Disable();
+        }
+
     }
 
     private void MoveUp()
@@ -64,6 +69,15 @@ public class MoleController : MonoBehaviour
         if (isOut && timeSpent >= maxTimeOut)
         {
             transform.Translate(Time.deltaTime * velocity * Vector3.down);
+        }
+    }
+
+    private void Disable()
+    {
+        if (transform.localPosition.y <= 0)
+        {
+            isOut = false;
+            isActive = false;
         }
     }
 }
