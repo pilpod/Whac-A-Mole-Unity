@@ -45,17 +45,6 @@ public class MoleController : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
-    {
-        if (isOut)
-        {
-            part.Play();
-            transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
-            Disable();
-        }
-
-    }
-
     private void MoveUp()
     {
         if (transform.localPosition.y < 2.25f && !isOut)
@@ -78,6 +67,18 @@ public class MoleController : MonoBehaviour
         {
             isOut = false;
             isActive = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Touché");
+
+        if (isOut)
+        {
+            part.Play();
+            transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
+            Disable();
         }
     }
 }
