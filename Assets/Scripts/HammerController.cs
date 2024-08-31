@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class HammerController : MonoBehaviour
 {
+    [SerializeField] private Camera mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,13 @@ public class HammerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            transform.position = hit.point;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 rotation = new Vector3(0, 0, 45);

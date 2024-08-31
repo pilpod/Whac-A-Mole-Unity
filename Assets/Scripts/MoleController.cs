@@ -72,8 +72,6 @@ public class MoleController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Touché");
-
         if (isOut)
         {
             part.Play();
