@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 1763602548}
 --- !u!54 &4200625
 Rigidbody:
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 1116410240}
 --- !u!54 &69257485
 Rigidbody:
@@ -2384,7 +2384,7 @@ MonoBehaviour:
   - {fileID: 1574675933}
   - {fileID: 937368217}
   - {fileID: 518695431}
-  frequency: 1
+  frequency: 3
 --- !u!4 &235512962
 Transform:
   m_ObjectHideFlags: 0
@@ -4382,7 +4382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 205873806}
 --- !u!54 &465660649
 Rigidbody:
@@ -4833,7 +4833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 1936147221}
 --- !u!54 &518695434
 Rigidbody:
@@ -7301,7 +7301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 2025516693}
 --- !u!54 &789096628
 Rigidbody:
@@ -8734,7 +8734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 1900847036}
 --- !u!54 &937368220
 Rigidbody:
@@ -10440,7 +10440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 867480271}
 --- !u!54 &1172199673
 Rigidbody:
@@ -13743,7 +13743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 1272379851}
 --- !u!54 &1574675936
 Rigidbody:
@@ -15507,7 +15507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 1
+  maxTimeOut: 3
   part: {fileID: 1549525936}
 --- !u!136 &1751699650
 CapsuleCollider:
@@ -18181,7 +18181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 5
+  maxTimeOut: 3
   part: {fileID: 78695627}
 --- !u!54 &2005816022
 Rigidbody:
