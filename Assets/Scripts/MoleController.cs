@@ -9,7 +9,7 @@ public class MoleController : MonoBehaviour
     private int velocity;
     private float starterTime;
     private bool isOut;
-    public int maxTimeOut = 1;
+    public int maxTimeOut = 3;
     private float timeSpent;
     public ParticleSystem part;
 

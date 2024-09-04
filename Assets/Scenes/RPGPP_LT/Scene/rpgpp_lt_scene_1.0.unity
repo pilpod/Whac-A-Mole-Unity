@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 1763602548}
 --- !u!54 &4200625
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 1116410240}
 --- !u!54 &69257485
@@ -1429,7 +1429,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 143642046}
-  - component: {fileID: 143642045}
   - component: {fileID: 143642044}
   m_Layer: 0
   m_Name: GameArea
@@ -1459,18 +1458,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 16.943382, y: 0.20549393, z: 25.618282}
   m_Center: {x: 0.91524345, y: 0.39725304, z: 12.51753}
---- !u!114 &143642045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143642043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8cdd1037b45da4a8b2e80b3b6ee52d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &143642046
 Transform:
   m_ObjectHideFlags: 0
@@ -2386,6 +2373,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8cdd1037b45da4a8b2e80b3b6ee52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moles:
+  - {fileID: 712575755}
+  - {fileID: 465660646}
+  - {fileID: 1172199670}
+  - {fileID: 789096625}
+  - {fileID: 4200622}
+  - {fileID: 69257482}
+  - {fileID: 2005816019}
+  - {fileID: 1574675933}
+  - {fileID: 937368217}
+  - {fileID: 518695431}
+  frequency: 1
 --- !u!4 &235512962
 Transform:
   m_ObjectHideFlags: 0
@@ -4382,7 +4381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 205873806}
 --- !u!54 &465660649
@@ -4833,7 +4832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 1936147221}
 --- !u!54 &518695434
@@ -7301,7 +7300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 2025516693}
 --- !u!54 &789096628
@@ -8734,7 +8733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 1900847036}
 --- !u!54 &937368220
@@ -10440,7 +10439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 867480271}
 --- !u!54 &1172199673
@@ -13743,7 +13742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 1272379851}
 --- !u!54 &1574675936
@@ -15507,8 +15506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
-  maxTimeOut: 5
+  isActive: 0
+  maxTimeOut: 1
   part: {fileID: 1549525936}
 --- !u!136 &1751699650
 CapsuleCollider:
@@ -18181,7 +18180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b9db8d4c018b4081b850086dc4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
   maxTimeOut: 5
   part: {fileID: 78695627}
 --- !u!54 &2005816022
@@ -19273,7 +19272,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 522811755}
   - {fileID: 867313194}
-  - {fileID: 235512962}
   - {fileID: 1767446352}
   - {fileID: 1830574651}
   - {fileID: 1740991177}
@@ -19281,6 +19279,7 @@ SceneRoots:
   - {fileID: 1066566350}
   - {fileID: 53444463}
   - {fileID: 956939992}
+  - {fileID: 235512962}
   - {fileID: 143642046}
   - {fileID: 1433194539}
   - {fileID: 1482209104}
