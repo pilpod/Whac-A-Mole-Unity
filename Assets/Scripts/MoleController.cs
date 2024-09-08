@@ -10,6 +10,7 @@ public class MoleController : MonoBehaviour
     private float starterTime;
     private bool isOut;
     public float maxTimeOut = 3;
+    private float minTimeOut = 0.75f;
     private float timeSpent;
     public ParticleSystem part;
 
@@ -17,7 +18,7 @@ public class MoleController : MonoBehaviour
     void Start()
     {
         transform.localPosition = new Vector3(10.45f, 0, -23);
-        velocity = 5;
+        velocity = 9;
         isOut = false;
     }
 
@@ -42,7 +43,7 @@ public class MoleController : MonoBehaviour
         }
 
         Disable();
-        
+
     }
 
     private void MoveUp()
@@ -77,6 +78,11 @@ public class MoleController : MonoBehaviour
             part.Play();
             transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
             Disable();
+
+            if (maxTimeOut <= minTimeOut)
+            {
+                maxTimeOut -= 0.25f;
+            }
         }
     }
 }

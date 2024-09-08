@@ -1452,7 +1452,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1467,7 +1467,7 @@ Transform:
   m_GameObject: {fileID: 143642043}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.0068464624, z: -0, w: 0.9999766}
-  m_LocalPosition: {x: 102.69564, y: 23.18, z: 18.007952}
+  m_LocalPosition: {x: 102.69564, y: 23, z: 18.007952}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13008,11 +13008,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7957796827297786059, guid: eb7b0d81414d6724fa971f03578cebd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.938
+      value: 23.7
       objectReference: {fileID: 0}
     - target: {fileID: 7957796827297786059, guid: eb7b0d81414d6724fa971f03578cebd2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.27
+      value: 27.43
       objectReference: {fileID: 0}
     - target: {fileID: 7957796827297786059, guid: eb7b0d81414d6724fa971f03578cebd2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15507,7 +15507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 3
+  maxTimeOut: 0.75
   part: {fileID: 1549525936}
 --- !u!136 &1751699650
 CapsuleCollider:
