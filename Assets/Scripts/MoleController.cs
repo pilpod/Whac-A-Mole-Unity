@@ -9,8 +9,8 @@ public class MoleController : MonoBehaviour
     private int velocity;
     private float starterTime;
     private bool isOut;
-    public float maxTimeOut = 3;
-    private float minTimeOut = 0.75f;
+    public float maxTimeOut;
+    private readonly float minTimeOut = 0.75f;
     private float timeSpent;
     public ParticleSystem part;
 
@@ -20,6 +20,7 @@ public class MoleController : MonoBehaviour
         transform.localPosition = new Vector3(10.45f, 0, -23);
         velocity = 9;
         isOut = false;
+        maxTimeOut = 2;
     }
 
     // Update is called once per frame
@@ -79,7 +80,7 @@ public class MoleController : MonoBehaviour
             transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
             Disable();
 
-            if (maxTimeOut <= minTimeOut)
+            if (maxTimeOut >= minTimeOut)
             {
                 maxTimeOut -= 0.25f;
             }

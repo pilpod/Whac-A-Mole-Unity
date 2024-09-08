@@ -2384,7 +2384,7 @@ MonoBehaviour:
   - {fileID: 1574675933}
   - {fileID: 937368217}
   - {fileID: 518695431}
-  frequency: 3
+  frequency: 2
 --- !u!4 &235512962
 Transform:
   m_ObjectHideFlags: 0
@@ -4382,7 +4382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 3
+  maxTimeOut: 2
   part: {fileID: 205873806}
 --- !u!54 &465660649
 Rigidbody:
@@ -15507,7 +15507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  maxTimeOut: 0.75
+  maxTimeOut: 3
   part: {fileID: 1549525936}
 --- !u!136 &1751699650
 CapsuleCollider:

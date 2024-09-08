@@ -8,35 +8,71 @@ public class GameSystem : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject[] moles;
-    public float frequency = 3;
-    private float starterTime;
+
+    public float frequency = 3f;
+    private readonly float minimumFrequency = 0.50f;
+    private readonly float frequencyCheckPointInSeconds = 15f;
+
+    private int dice = 1;
+
+    private float starterFrameTime;
+    private float starterTimeGame;
+    private float CheckPointTime;
+
     private int randomMole;
 
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
+        CheckPointTime = starterTimeGame = Time.time;
 
-        moles[0].GetComponent<MoleController>().isActive = true;
+        moles[randomMole].GetComponent<MoleController>().isActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float timeSpent = Time.time - starterTime;
+        float now = Time.time;
 
-        if (timeSpent >= frequency)
+        SetMole(now);
+        IncreaseFrequency(now);
+    }
+
+    private void SetMole(float now)
+    {
+        float timeSpent = now - starterFrameTime;
+        randomMole = Random.Range(0, moles.Length);
+
+        if (timeSpent >= frequency || dice == 6)
         {
-            randomMole = Random.Range(0, moles.Length);
-            
             bool moleIsActive = moles[randomMole].GetComponent<MoleController>().isActive;
 
             if (!moleIsActive)
             {
                 moles[randomMole].GetComponent<MoleController>().isActive = true;
-                starterTime = Time.time;
+                starterFrameTime = now;
+
+                Debug.Log("Setting Mole ----------- : " + dice);
             }
+
+            RollDice();
         }
     }
 
+    private void IncreaseFrequency(float now)
+    {
+        float CheckpointTimeSpent = now - CheckPointTime;
+
+        if (CheckpointTimeSpent >= frequencyCheckPointInSeconds && frequency > minimumFrequency)
+        {
+            frequency -= 0.25f;
+            CheckPointTime = now;
+        }
+    }
+
+    private void RollDice()
+    {
+        dice = Random.Range(1, 7);
+    }
 }
