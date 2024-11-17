@@ -1,3 +1,5 @@
+//using System;
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,20 +8,23 @@ using UnityEngine;
 public class GameSystem : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public GameObject[] holes;
     public GameObject[] moles;
+    public GameObject flower_attack;
 
-    public float frequency = 3f;
+    public float frequency = 2f;
     private readonly float minimumFrequency = 0.50f;
-    private readonly float frequencyCheckPointInSeconds = 15f;
+    private readonly float frequencyCheckPointInSeconds = 10f;
 
-    private int dice = 1;
+    private int dice = 0;
 
     private float starterFrameTime;
     private float starterTimeGame;
     private float CheckPointTime;
 
-    private int randomMole;
+    private int randomHole;
+    private GameObject currentHole;
+    private GameObject currentMole;
 
     void Start()
     {
@@ -27,36 +32,69 @@ public class GameSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         CheckPointTime = starterTimeGame = Time.time;
 
-        moles[randomMole].GetComponent<MoleController>().isActive = true;
+        moles[randomHole].GetComponent<MoleController>().isActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         float now = Time.time;
+        float timeSpent = now - starterFrameTime;
 
-        SetMole(now);
+        randomHole = Random.Range(0, moles.Length);
+        currentHole = holes[randomHole];
+        currentMole = moles[randomHole];
+        HoleController hole = currentHole.GetComponent<HoleController>();
+
+        if (hole.isEmpty)
+        {
+            if (dice > 3)
+            {
+                SetMole(now, timeSpent);
+            }
+            else
+            {
+                SetFlower(now, timeSpent);
+            }
+        }
+
+        if (timeSpent >= frequency) RollDice();
+
         IncreaseFrequency(now);
     }
 
-    private void SetMole(float now)
+    private void SetMole(float now, float timeSpent)
     {
-        float timeSpent = now - starterFrameTime;
-        randomMole = Random.Range(0, moles.Length);
-
-        if (timeSpent >= frequency || dice == 6)
+        if (timeSpent >= frequency)
         {
-            bool moleIsActive = moles[randomMole].GetComponent<MoleController>().isActive;
+            bool moleIsActive = currentMole.GetComponent<MoleController>().isActive;
 
             if (!moleIsActive)
             {
-                moles[randomMole].GetComponent<MoleController>().isActive = true;
+                currentMole.GetComponent<MoleController>().isActive = true;
                 starterFrameTime = now;
-
-                Debug.Log("Setting Mole ----------- : " + dice);
             }
+        }
+    }
 
-            RollDice();
+    private void SetFlower(float now, float timeSpent)
+    {
+        if (timeSpent >= frequency)
+        {
+            GameObject plant = (currentMole.transform.parent.Find("flower_attack(Clone)") == null) ?
+                Instantiate(flower_attack, currentHole.transform)
+                : currentMole.transform.parent.Find("flower_attack(Clone)").gameObject;
+
+            ParticleSystem part = currentMole.GetComponent<MoleController>().part;
+            plant.GetComponent<MoleController>().part = part;
+
+            bool isActive = plant.GetComponent<MoleController>().isActive;
+
+            if (!isActive)
+            {
+                plant.GetComponent<MoleController>().isActive = true;
+                starterFrameTime = now;
+            }
         }
     }
 

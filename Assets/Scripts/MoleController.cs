@@ -10,8 +10,9 @@ public class MoleController : MonoBehaviour
     private float starterTime;
     private bool isOut;
     public float maxTimeOut;
-    private readonly float minTimeOut = 0.75f;
+    private readonly float minTimeOut = 0.50f;
     private float timeSpent;
+
     public ParticleSystem part;
 
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class MoleController : MonoBehaviour
         transform.localPosition = new Vector3(10.45f, 0, -23);
         velocity = 9;
         isOut = false;
-        maxTimeOut = 2;
+        maxTimeOut = 1.5f;
     }
 
     // Update is called once per frame
@@ -74,7 +75,7 @@ public class MoleController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isOut)
+        if (isOut && other.name == "Hammer")
         {
             part.Play();
             transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
